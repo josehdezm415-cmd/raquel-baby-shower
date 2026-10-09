@@ -27,6 +27,7 @@ body {
     radial-gradient(circle at 85% 10%, rgba(245, 140, 168, 0.32), transparent 22rem),
     linear-gradient(145deg, #fff8ef 0%, #ffe4e9 55%, #fff4df 100%);
   overflow-x: hidden;
+  font-size: 17px;
 }
 
 .berry-field::before,
@@ -249,7 +250,7 @@ body {
   font-weight: 800;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  font-size: 0.78rem;
+  font-size: 0.86rem;
 }
 
 .berry-girl-mark {
@@ -279,7 +280,7 @@ body {
   font-weight: 800;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  font-size: 0.82rem;
+  font-size: 0.92rem;
 }
 
 h1 {
@@ -302,7 +303,7 @@ h2 {
 .intro {
   margin: 0 auto 26px;
   max-width: 590px;
-  font-size: clamp(1.05rem, 3.5vw, 1.28rem);
+  font-size: clamp(1.15rem, 4vw, 1.38rem);
   line-height: 1.65;
   color: var(--muted);
 }
@@ -311,7 +312,7 @@ h2 {
   display: inline-grid;
   gap: 4px;
   min-width: min(100%, 390px);
-  padding: 18px 22px;
+  padding: 20px 24px;
   border-radius: 24px;
   background: rgba(255, 255, 255, 0.78);
   border: 1px dashed rgba(217, 78, 115, 0.35);
@@ -323,11 +324,12 @@ h2 {
 .date-pill span {
   color: var(--muted);
   font-weight: 700;
+  font-size: 1.02rem;
 }
 
 .date-pill strong {
   color: var(--berry);
-  font-size: 1.18rem;
+  font-size: 1.3rem;
 }
 
 .hero-actions,
@@ -343,11 +345,12 @@ h2 {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-height: 48px;
-  padding: 13px 22px;
+  min-height: 54px;
+  padding: 15px 24px;
   border-radius: 999px;
   text-decoration: none;
   font-weight: 800;
+  font-size: 1.05rem;
   transition: transform 180ms ease, box-shadow 180ms ease, background 180ms ease;
 }
 
@@ -377,7 +380,7 @@ h2 {
 .location-card,
 .rsvp-card {
   margin-top: 18px;
-  padding: clamp(24px, 5vw, 42px);
+  padding: clamp(28px, 6vw, 46px);
   text-align: center;
 }
 
@@ -405,7 +408,7 @@ h2 {
 .count-grid strong {
   display: block;
   color: var(--berry);
-  font-size: clamp(1.55rem, 7vw, 2.6rem);
+  font-size: clamp(1.85rem, 8vw, 2.9rem);
   line-height: 1;
 }
 
@@ -414,7 +417,7 @@ h2 {
   margin-top: 6px;
   color: var(--muted);
   font-weight: 800;
-  font-size: 0.82rem;
+  font-size: 0.9rem;
   text-transform: uppercase;
 }
 
@@ -426,7 +429,7 @@ h2 {
 }
 
 .detail-card {
-  padding: 30px;
+  padding: 34px 30px;
 }
 
 .detail-card .icon {
@@ -444,11 +447,11 @@ h2 {
 .rsvp-card p {
   color: var(--muted);
   line-height: 1.65;
-  font-size: 1.03rem;
+  font-size: 1.15rem;
 }
 
 .address {
-  font-size: 1.1rem !important;
+  font-size: 1.22rem !important;
   font-weight: 700;
   color: var(--text) !important;
 }
@@ -457,6 +460,7 @@ h2 {
   margin-top: 14px;
   color: var(--berry) !important;
   font-weight: 800;
+  font-size: 1.18rem;
 }
 
 footer {
@@ -472,4 +476,14 @@ footer {
   .details-grid { grid-template-columns: 1fr; }
   .count-grid { grid-template-columns: repeat(2, 1fr); }
   .button { width: 100%; }
+  body { font-size: 18px; }
+  h1 { font-size: clamp(4.6rem, 18vw, 7rem); }
+  h2 { font-size: clamp(1.85rem, 7vw, 2.45rem); }
+  .hero-open { padding-left: 10px; padding-right: 10px; }
+  .intro { font-size: 1.18rem; }
+  .detail-card { padding: 32px 24px; }
+  .location-card,
+  .rsvp-card,
+  .countdown { padding: 30px 22px; }
 }
+
