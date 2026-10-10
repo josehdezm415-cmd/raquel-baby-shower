@@ -254,23 +254,21 @@ body {
 }
 
 .berry-girl-mark {
-  margin: 18px auto 6px;
-  width: clamp(150px, 38vw, 240px);
-  height: clamp(150px, 38vw, 240px);
+  margin: 12px auto 4px;
+  width: min(66vw, 285px);
   display: grid;
   place-items: center;
-  border-radius: 50%;
-  background: linear-gradient(145deg, rgba(255,255,255,0.95), rgba(255, 227, 235, 0.95));
-  border: 1px solid rgba(217, 78, 115, 0.22);
-  box-shadow: 0 18px 44px rgba(217, 78, 115, 0.18);
-  overflow: hidden;
+  border-radius: 34px;
+  background: radial-gradient(circle at 50% 58%, rgba(255,255,255,0.56), rgba(255,227,235,0.16) 52%, transparent 72%);
+  filter: drop-shadow(0 18px 28px rgba(160, 53, 82, 0.18));
+  overflow: visible;
 }
 
 .berry-girl-mark img {
-  width: 118%;
-  height: 118%;
-  object-fit: cover;
-  object-position: center 42%;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  object-position: center;
   display: block;
 }
 
