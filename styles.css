@@ -461,25 +461,6 @@ h2 {
   font-size: 1.18rem;
 }
 
-.bottom-character {
-  display: grid;
-  place-items: center;
-  width: 100%;
-  max-width: 100%;
-  margin: 16px auto -2px;
-  overflow: visible;
-  pointer-events: none;
-}
-
-.bottom-character img {
-  display: block;
-  width: min(72vw, 360px);
-  max-width: 100%;
-  height: auto;
-  object-fit: contain;
-  filter: drop-shadow(0 16px 24px rgba(160, 53, 82, 0.14));
-}
-
 footer {
   text-align: center;
   padding: 26px 0 0;
@@ -502,7 +483,5 @@ footer {
   .location-card,
   .rsvp-card,
   .countdown { padding: 30px 22px; }
-  .bottom-character { margin-top: 12px; }
-  .bottom-character img { width: min(78vw, 330px); }
 }
 
