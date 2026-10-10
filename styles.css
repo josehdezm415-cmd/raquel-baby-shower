@@ -229,6 +229,7 @@ body {
 
 .hero-open .eyebrow {
   display: inline-block;
+  margin-top: 4px;
   padding: 7px 14px;
   border-radius: 999px;
   background: rgba(255, 255, 255, 0.42);
@@ -263,7 +264,7 @@ body {
 }
 
 .berry-girl-mark {
-  margin: 12px auto 4px;
+  margin: 12px auto 18px;
   width: min(66vw, 285px);
   display: grid;
   place-items: center;
