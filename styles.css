@@ -93,21 +93,22 @@ body {
   display: grid;
   grid-template-columns: repeat(4, minmax(210px, 1fr));
   align-content: center;
-  gap: 88px 42px;
+  gap: 84px 38px;
   pointer-events: none;
   transform: rotate(-24deg);
   transform-origin: center;
-  opacity: 0.16;
+  opacity: 0.28;
   mix-blend-mode: multiply;
 }
 
 .demo-watermark span {
   display: block;
-  color: rgba(93, 47, 53, 0.5);
+  color: rgba(93, 47, 53, 0.72);
   font-weight: 900;
-  font-size: clamp(0.86rem, 3.4vw, 1.35rem);
-  letter-spacing: 0.08em;
+  font-size: clamp(0.92rem, 3.8vw, 1.48rem);
+  letter-spacing: 0.09em;
   text-align: center;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.55);
   text-transform: uppercase;
   white-space: nowrap;
 }
@@ -116,8 +117,8 @@ body {
   .demo-watermark {
     inset: -18vh -80vw;
     grid-template-columns: repeat(3, minmax(230px, 1fr));
-    gap: 82px 34px;
-    opacity: 0.18;
+    gap: 78px 30px;
+    opacity: 0.32;
   }
 }
 
