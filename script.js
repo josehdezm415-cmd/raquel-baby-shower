@@ -66,25 +66,34 @@ function setupGallery() {
 
   const cards = Array.from(gallery.querySelectorAll('.photo-card'));
   const dots = Array.from(document.querySelectorAll('.gallery-dots button'));
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
   let current = 0;
   let startX = 0;
+  let autoRotateTimer;
 
   function render() {
     cards.forEach((card, index) => {
       card.classList.remove('is-active', 'is-next', 'is-prev');
       if (index === current) card.classList.add('is-active');
       if (index === (current + 1) % cards.length) card.classList.add('is-next');
-      if (index === (current - 1 + cards.length) % cards.length) card.classList.add('is-prev');
+      if (cards.length > 2 && index === (current - 1 + cards.length) % cards.length) card.classList.add('is-prev');
     });
     dots.forEach((dot, index) => dot.classList.toggle('is-active', index === current));
   }
 
-  function goTo(index) {
+  function goTo(index, { manual = false } = {}) {
     current = (index + cards.length) % cards.length;
     render();
+    if (manual) startAutoRotate();
   }
 
-  dots.forEach((dot, index) => dot.addEventListener('click', () => goTo(index)));
+  function startAutoRotate() {
+    window.clearInterval(autoRotateTimer);
+    if (reduceMotion.matches || cards.length < 2) return;
+    autoRotateTimer = window.setInterval(() => goTo(current + 1), 5000);
+  }
+
+  dots.forEach((dot, index) => dot.addEventListener('click', () => goTo(index, { manual: true })));
 
   gallery.addEventListener('touchstart', (event) => {
     startX = event.touches[0].clientX;
@@ -94,10 +103,17 @@ function setupGallery() {
     const endX = event.changedTouches[0].clientX;
     const diff = endX - startX;
     if (Math.abs(diff) < 45) return;
-    goTo(current + (diff < 0 ? 1 : -1));
+    goTo(current + (diff < 0 ? 1 : -1), { manual: true });
   }, { passive: true });
 
+  reduceMotion.addEventListener('change', startAutoRotate);
+  document.addEventListener('visibilitychange', () => {
+    if (document.hidden) window.clearInterval(autoRotateTimer);
+    else startAutoRotate();
+  });
+
   render();
+  startAutoRotate();
 }
 
 updateCountdown();
